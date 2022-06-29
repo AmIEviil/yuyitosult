@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+    <br><br><br>
+    <div class="card" style="left: 470px;width: 600px; border-radius: 20px;">
+        <br>
+        <h2 style="text-align: center;">Iniciar Sesion</h2>
+        <form class="form-inline" action="/action_page.php" style="text-align: center;">
+          <label for="email2" class="mb-2 mr-sm-2"> <h5><b style="color: black;">Email:</b></h5></label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Ingresar email" name="email" style="text-align: center;">
+          <label for="pwd2" class="mb-2 mr-sm-2"><h5><b style="color: black;">Password:</b></h5></label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Ingresar contraseña" name="pswd" style="text-align: center;">
+          <br><br> 
+          <div style="text-align: center;">
+          <button type="submit" class="btn btn-primary mb-2">Iniciar Sesion</button>
+          </div><br>
+          <p style="text-align: center;"><a href="{% url 'registrarse' %}">Registrarse</a></p>
+        </form>
+        <br>
+      </div>
+      
+  <!--Espaciados-->
+  <br><br><br><br><br><br><br>
+  {% endblock contenido %}
+  {% block js %}
+  
+  {% endblock js %}

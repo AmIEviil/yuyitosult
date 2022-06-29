@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static  'app/css/webpayFoter.css' %}">
+
+<body style="background-image: url({% static 'app/img/fondowebpay.jpg' %})">
+    <br>
+    <div class="card" style="left: 350px;width: 800px; text-align: center;height: 620px;">
+        <p style="text-align: center;"><img src="{% static 'app/img/Logoredcompra.png' %}" alt=""></p>
+        <br>
+        
+        <div class="card" style="background-color: beige; width: 600px; padding: 20px;position: absolute;left: 100px;">
+            <p style="font-size: small;">Favor revisar monto de la compra a realizar, para no generar malos entendidos.</p>
+        </div>
+        <br><br><br><br><br>
+        <div class="card" style="background-color: gainsboro; width: 600px; padding: 20px;position: absolute;left: 100px;">
+            <p style="width: 184;height: -200;font-size: small;"><b>Total a pagar:</b> $3.210 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ᴛʀᴇs ᴍɪʟ ᴅᴏsᴄɪᴇɴᴛᴏs ᴅɪᴇᴢ
+            </p>
+            <p style="text-align: center;"><b>Comercio:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Banco Estado <br><br>
+                <b>Fecha compra:</b>&nbsp;&nbsp;&nbsp;&nbsp; 27/06/2022 <br><br><b>Rut:&nbsp;&nbsp;&nbsp;&nbsp;</b>19.930.044-K<br><br><b>Nombre titular:&nbsp;&nbsp;&nbsp;&nbsp;</b>Felipe Droguett Farias <br> <br><b>N° de transferencia:</b> <li><input type="text" name="nombredelacaja" style="width: 20px;height: 30px;"> <input type="text" name="nombredelacaja" style="width: 20px;height: 30px;">&nbsp;<input type="text" name="nombredelacaja" style="width: 20px;height: 30px;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A4&nbsp;H1&nbsp;E6</li>
+            </p>
+        
+        <button type="submit" class="btn btn-primary mb-2" style="border-radius: 30px; background-color: orange;"><a href="{% url 'home' %}">Cancelar</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary mb-2" style="border-radius: 30px; background-color: orange;"><a href="{% url 'home' %}">Pagar</a></button>
+        </div>
+    </div>
+    
+</body>

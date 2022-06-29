@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static  'app/css/webpayFoter.css' %}">
+<body style="background-image: url({% static 'app/img/fondowebpay.jpg' %})">
+<div>
+    <br><br><br>
+    <p style="text-align: center;"><img src=" {% static 'app/img/logoredcompra1.png' %}" alt="" style="width: 430px;"></p>
+    <br><br><br>
+    <h5 style="text-align: center; font-size: xx-large;color: black; background-color: white;">¡Selecciona tu banco!</h5>
+    <br><br><br>
+    <div class="card-body">
+        <div style="text-align: center;">
+    <a href="{% url 'Webpay' %}"><img src="{% static 'app/img/bancoChile.png' %}" alt="" width="246" height="200" style="border-radius:40px ;"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'Webpay' %}"><img src="{% static 'app/img/bancoEstado.png' %}" alt="" width="246" height="200"style="border-radius:40px ;"></a>
+    </div>
+    <br><br>
+    <div style="text-align: center;">
+        <a href="{% url 'Webpay' %}"><img src="{% static 'app/img/bancoFalabella.png' %}" alt="" width="246" height="200"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'Webpay' %}"><img src="{% static 'app/img/bancoItau.png' %}" alt="" width="246" height="200"></a>
+        </div>
+    </div>
+</div> 
+<br><br>
+</body>
+<br><br><br>
+<footer class="page-footer" id="footers" style="background-color: #DD4A48; text-align: start;font-size: small;">
+    <div class="footer-copyright">
+        <div class="container">
+            © 2022 Copyright Red Compra
+            <a class="grey-text text-lighten-4 right" href="https://publico.transbank.cl">¡Contáctanos!&nbsp;&nbsp;</a>
+        </div>
+    </div>
+
+</footer>

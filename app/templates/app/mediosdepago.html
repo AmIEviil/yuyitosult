@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+  <br><br><br>
+  <div class="card" style="left: 570px;width: 300px; border-radius: 20px; text-align: center;">
+    <br>
+    <h2 style="text-align: center;">Metodos de Pago</h2>
+    <br>
+    <a href="{% url 'Bancos' %}"><p style="text-align: center;"><img src="{% static 'app/img/Logoredcompra.png' %}" alt=""></p></a>
+    <br>
+  </div>
+  <!--Espaciados-->
+  <br><br><br><br><br> 
+  {% endblock contenido %}
+  {% block js %}
+  
+  {% endblock js %}

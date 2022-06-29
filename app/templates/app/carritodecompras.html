@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block css %}
+{% endblock %}
+{% block contenido %}
+<p style="text-align: center;">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/carro.png' %}" alt=""></p>
+
+<!--Fondo de la página-->
+
+  <div class="container" id="tablahorario">
+    <h2></h2>
+    <p></p>
+    <table class="table" id="tablahorario">
+      <thead class="thead-dark">
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><img src="{% static 'app/img/carrito/1.png' %}" alt=""></strong></td>
+          <td><strong>Cachantun Agua mineral con gas 1.6 L</strong></td>
+          <td><strong>$770</strong></td>
+        </tr>
+        <tr>
+          <td><strong><img src="{% static 'app/img/carrito/11.png' %}" alt=""></strong></td>
+          <td><strong>Benedictino Agua Purificada con gas 1.5 L</strong></td>
+          <td><strong>$740</strong></td>
+        </tr>
+        <tr>
+          <td><strong><img src="{% static 'app/img/carrito/2.png' %}" alt=""></strong></td>
+          <td><strong>Canada Dry Ginger Ale 1.5 L</strong></td>
+          <td><strong>$1.700</strong></td><br>
+          <td><strong><br>Total <br>$3.210 <br> <br><a href="{% url 'delivery' %}"><button type="submit" class="btn btn-primary mb-2">Pagar</button></a></strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--Espaciados-->
+  <br><br><br><br><br>
+  {% endblock contenido %}
+  {% block js %}
+
+  {% endblock js %}

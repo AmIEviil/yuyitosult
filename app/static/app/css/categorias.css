@@ -1,0 +1,25 @@
+
+#categorias {
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 45px;
+    margin: auto;
+}
+
+#categorias .contenedor article img{
+    width: 250px;
+    height: 250px;
+    border: solid 4px #DD4A48;
+    border-radius: 7px;
+}
+
+#categorias .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 7px;
+}
+
+#categorias article{
+    margin: 15px;
+}

@@ -1,0 +1,22 @@
+{% load static %}
+<body style="background-image: url({% static 'app/img/fondowebpay.jpg' %})">
+<div>
+    <br><br><br>
+    <p style="text-align: center;"><img src=" {% static 'app/img/logoredcompra1.png' %}" alt="" style="width: 430px;"></p>
+    <br><br>
+    <div class="card">
+    <form class="form-inline" action="/action_page.php" style="text-align: center;">
+        <label for="email2" class="mb-2 mr-sm-2"> <h5 style="font-size: large;"><b style="color: black;"></b></h5></label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Ingresar rut" name="email" style="text-align: center;">
+        <label for="pwd2" class="mb-2 mr-sm-2"><h5><b style="color: black;"></b></h5></label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Ingresar contraseña" name="pswd" style="text-align: center;">
+        <br><br> <br>
+        <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary mb-2" style="border-radius: 30px;"><a href="{% url 'Pagowebpay' %}">Iniciar Sesion</a></button>
+        </div><br>
+      </form>
+    </div>
+</div> 
+</body>
+
+

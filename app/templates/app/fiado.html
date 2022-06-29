@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<!--Fondo de la página-->
+<body style="background-image: url({% static 'app/img/fondotester.jpg' %});" >
+    <div class="card" style="left: 450px;width: 600px; border-radius: 20px;bottom: 60px;">
+        <br>
+        <h2 style="text-align: center;">Datos de la dirección</h2>
+        <form class="form-inline" style="text-align: center;">
+          <label for="email2" class="mb-2 mr-sm-2"> <h5><b style="color: black;">Nombres y Apellidos</b></h5></label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Ingresar Nombres y Apellidos" name="email" style="text-align: center;">
+          <label for="pwd2" class="mb-2 mr-sm-2"><h5><b style="color: black;">Email</b></h5></label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Ingresar Email" name="pswd" style="text-align: center;">
+          <label for="pwd2" class="mb-2 mr-sm-2"><h5><b style="color: black;">Numero Telefónico</b></h5></label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Ingresar numero de telefono" name="pswd" style="text-align: center;">
+          <label for="pwd2" class="mb-2 mr-sm-2"><h5><b style="color: black;">Dirección</b></h5></label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Ingresar Direccion" name="pswd" style="text-align: center;">
+          <br><br>
+          <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary mb-2"><p style="color: black;"><a href="{% url 'mediosdepago' %}">Pagar</a></p></button>
+          </div>
+        </form>
+        <br>
+      </div>
+</body>
+{% endblock contenido %}
+{% block js %}
+
+{% endblock js %}

@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static  'app/css/categorias.css' %}">
+{% endblock %}
+{% block contenido %}
+<section id="categorias">
+  <div class="contenedor">
+    {% for c in categorias %}
+
+    <article> <a href="/vista_prod/{{c.data.0}}">
+        {% if c.img_tipo %}
+        <img src="data:img_tipo/png;base64, {{c.img_tipo}}" width="100px" height="100px" alt="">
+        {% endif%}
+        <h4>{{c.data.1}}</h4>
+        <input type="text" value="{{c.data.0}}" hidden>
+      </a>
+    </article>
+    {% endfor %}
+
+  </div>
+  {% endblock contenido %}
+  {% block js %}
+
+  {% endblock js %}

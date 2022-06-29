@@ -1,0 +1,39 @@
+@import url(banner.css);
+@import url(blog.css);
+@import url(menu.css);
+
+main{
+    background-color: #DD4A48;  
+}
+header {
+    width: 100%;
+    height: 70px;
+    background: #DD4A48;
+    color: rgb(240, 240, 243);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    position: fixed;/* posicion fija*/
+    font-size: large;
+}
+h1 {
+    float: left;
+}
+
+.contenedor{
+    width: 98%;
+    margin: auto;
+}
+/* pie de la pagina */
+footer {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 10px;
+    background-color: #DD4A48;
+}
+footer .contenedor{
+    border-top: solid 5px #DD4A48;
+    margin: 45px 0px;
+    padding: 15px;
+    border-bottom: solid 5px #DD4A48;    
+}

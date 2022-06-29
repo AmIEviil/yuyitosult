@@ -1,0 +1,122 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static  'app/css/home.css' %}">
+{% endblock %}
+{% block contenido %}
+
+<!--Carrusel-->
+<section class="carrusel" >
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="border-radius: 15px ; width: 1200px;">
+    <!-- Indicadores -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Imagenes -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{% static 'app/img/home-desktop-banner-0-DespachoGratis-cuisineandco-s12-21032022.jpg' %}"
+          alt="Los Angeles" style="width: 100%; height: 400px;">
+      </div>
+      <div class="item">
+        <img src="{% static 'app/img/coca-cola-happiness-1280x664.jpg' %}" alt="Chicago"
+          style="width: 100%; height: 400px;">
+      </div>
+      <div class="item">
+        <img src="{% static 'app/img/maxresdefault.jpg' %}" alt="New York" style="width: 100%; height: 400px;">
+      </div>
+    </div>
+    <!-- Controles de Izquierda y Derecha -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<br><br>
+<!--Imagen de despacho-->
+<div class="deli" >
+  <img src="{% static 'app/img/delivery-en-pleno-trafico.jpg' %}" alt="" width="1200" height="300" style="border-radius: 15px ;">
+</div>
+<br><br><br><br>
+<p style="text-align: center;"><img src="{% static 'app/img/productonewlogo.png' %}" alt=""></p>
+<br><br><br><br>
+<!--Imagenes Promocionales-->
+<div class="prodsnew">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/hersey.jpg' %}" alt="" width="346" height="300">
+  &nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/ambrosito.jpg' %}" alt="" width="346" height="300">
+  &nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/frugele.jpg' %}" alt="" width="346" height="300">
+  &nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/desodorante/4.png' %}" alt="" width="346" height="300">
+</div>
+<br><br><br><br><br><br>
+<!--Titulo Bebida-->
+<p style="text-align: center;"><img src="{% static 'app/img/bebidafav.png' %}" alt=""></p>
+<br><br><br><br>
+<!--Cards de los Productos Home-->
+<div class="prodcoca">
+  <div class="card-group">
+    <div class="card" style="margin: 15px">
+      <img class="card-img-top" src="{% static 'app/img/coca z.jpg' %}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">Coca-Cola</h4>
+        <p class="card-text">Bebida Coca-Cola sin azúcar 350 ml <br>Precio: $690 (1 Unidad)</p><br>
+        <a href="#" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
+      </div>
+    </div>
+    <div class="card" style="margin: 15px">
+      <img class="card-img-top" src="{% static 'app/img/coca.jpg' %}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">Coca-Cola</h4>
+        <p class="card-text">Bebida Coca-Cola original 350 ml<br>Precio: $690 (1 Unidad)</p><br>
+        <a href="#" class="btn btn-danger">Añadir al Carrito</a>
+      </div>
+    </div>
+    <div class="card" style="margin: 15px">
+      <img class="card-img-top" src="{% static 'app/img/bilz.png' %}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">Bilz</h4>
+        <p class="card-text">Bebida 1.5 L<br>Precio: $1.700 (1 Unidad)</p><br>
+        <a href="#" class="btn btn-danger">Añadir al Carrito</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!--Imagen de huevitos de pascua-->
+<!--Titulo de los huevitos-->
+<!--img becker-->
+<br><br>
+<div style="text-align: center;">
+  <img src="{% static 'app/img/maruchan.jpg' %}" alt="" style="border-radius: 50px;padding: 20px;">
+</div>
+<br><br>
+<!--img anuncios x2-->
+<br><br>
+<div style="text-align: center;">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/sabori.jpg' %}" alt="" width="710" height="400">
+  &nbsp;&nbsp;&nbsp;
+  <img src="{% static 'app/img/vizio.jpg' %}" alt="" width="710" height="400">
+</div>
+<br><br>
+<!--Anuncio de detergente-->
+<div style="text-align: center;">
+  <img src="{% static 'app/img/Anuncioariel.jpg' %}" alt="" style="border-radius: 50px;padding: 20px;">
+</div>
+<!--Espaciados-->
+<br><br>
+{% endblock contenido %}
+{% block js %}
+
+{% endblock js %}

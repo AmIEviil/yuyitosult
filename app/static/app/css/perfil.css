@@ -1,0 +1,42 @@
+
+#perfil {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 45px;
+    margin: auto;
+    border-radius: 7px;
+    border: solid 4px;
+}
+#title{
+    text-align: center;
+}
+#perfil .contperf article {
+    border: solid 4px #DD4A48;
+    border-radius: 7px;
+}
+
+#perfil .contperf{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#perfil article{
+    margin: 45px;
+    justify-items: auto;
+    text-align: left;
+}
+#centrop h2{
+    color: #DD4A48;
+    
+    border-radius: 5px;
+    border-color: #DD4A48;
+}
+#centrop {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+#infopf img{
+    width: 400px;
+    height: 350px;
+}
