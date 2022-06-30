@@ -33,7 +33,7 @@
                 <li><a href="{% url 'catalogo' %}" style="font-size: medium; font-style: normal;">Catálogo</a></li>
                 <li><a href="{% url 'productos' %}" style="font-size: medium; font-style: normal;">Productos</a>
                 {% if user.is_authenticated %}
-                <li><a href="#" style="font-size: medium; font-style: normal;" >{{user.username}}</a></li>
+                <li><a style="font-size: medium; font-style: normal;" >{{user.username}}</a></li>
                 <li><a href="{% url 'logout' %}" style="font-size: medium; font-style: normal;">Cerrar Sesion</a></li>
                 
                 {% else %}

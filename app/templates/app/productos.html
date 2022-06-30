@@ -16,6 +16,7 @@
         <img src="data:img_producto/png;base64, {{p.img_producto}}" width="100px" height="100px" alt="">
         {% endif%}
         <h4>{{p.data.1}}</h4>
+        <h4>$ {{p.data.3}}</h4>
         <a href="{% url 'Add' p.data.0 %}" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
 
       </a>

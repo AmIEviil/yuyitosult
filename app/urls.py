@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import eliminar_producto,restar_producto,limpiar_carrito,agregar_producto, registro,bancos,pagowebpay, visualizar_prod,webpay,catalogo,delivery,home,vista_prod,busqueda,carritodecompras,fiado,InicioSesion,mediosdepago,productos,quienessomos,registrarse          
+from .views import eliminar_producto,restar_producto,limpiar_carrito,agregar_producto, registro,bancos,pagowebpay, visualizar_prod,webpay,catalogo,delivery,home,vista_prod,busqueda,carritodecompras,fiado,mediosdepago,productos,quienessomos          
 
 
 urlpatterns = [
@@ -9,11 +9,9 @@ urlpatterns = [
     path('busqueda/', busqueda, name="busqueda"),
     path('carritodecompras/', carritodecompras, name="carritodecompras"),
     path('fiado/', fiado, name="fiado"),
-    path('InicioSesion/', InicioSesion, name="InicioSesion"),
     path('mediosdepago/', mediosdepago, name="mediosdepago"),
     path('productos/', productos, name="productos"),
     path('quienessomos/', quienessomos, name="quienessomos"),
-    path('registrarse/', registrarse, name="registrarse"),
     path('delivery/', delivery, name="delivery"),
     path('catalogo/', catalogo, name="catalogo"),
     path('webpay/', webpay, name="Webpay"),

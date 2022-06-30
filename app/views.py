@@ -9,8 +9,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import redirect
 
-from django.template import base
-
 from app.carrito import Carrito
 
 def vista_prod(request,id):
@@ -18,33 +16,12 @@ def vista_prod(request,id):
     productos = Producto.objects.filter(id_tipo_producto=id_tipo)
     contexto = {"productos":productos}
     print(productos)
-    
-
     return render(request, 'app/vista_prod.html',contexto)
 
 def visualizar_prod(request,id):
     producto = Producto.objects.get(id_producto=id)
     contexto = {"producto":producto}
-    print(productos)
     return render(request, 'app/producto.html',contexto)
-
-def busqueda(request):
-    return render(request, 'app/busqueda.html')
-
-def carritodecompras(request):
-    return render(request, 'app/carritodecompras.html')
-
-def fiado(request):
-    return render(request, 'app/fiado.html')
-
-def home(request):
-    return render(request, 'app/home.html')
-
-def InicioSesion(request):
-    return render(request, 'app/InicioSesion.html')
-
-def mediosdepago(request):
-    return render(request, 'app/mediosdepago.html')
 
 def catalogo (request):
 
@@ -87,6 +64,7 @@ def agregar_producto(request, id_producto):
     carrito = Carrito(request)
     producto = Producto.objects.get(id_producto=id_producto)
     carrito.agregar(producto)
+
     return redirect("carritodecompras")
 
 def eliminar_producto(request, producto_id):
@@ -106,15 +84,35 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect("carritodecompras")
 
-
 def quienessomos(request):
     return render(request, 'app/quienessomos.html')
 
-def registrarse(request):
-    return render(request, 'app/registrarse.html')
-
 def delivery(request):
     return render(request, 'app/delivery.html')
+
+def busqueda(request):
+    return render(request, 'app/busqueda.html')
+
+def carritodecompras(request):
+    return render(request, 'app/carritodecompras.html')
+
+def fiado(request):
+    return render(request, 'app/fiado.html')
+
+def home(request):
+    return render(request, 'app/home.html')
+
+def mediosdepago(request):
+    return render(request, 'app/mediosdepago.html')
+
+def webpay(request):
+    return render(request, 'app/webpay.html')
+
+def pagowebpay(request):
+    return render (request,'app/pagowebpay.html')
+
+def bancos(request):
+    return render(request, 'app/bancos.html')
 
 def listado_Productos():
     django_cursor = connection.cursor()
@@ -141,18 +139,6 @@ def listado_Tipo_Productos():
         lista.append(fila)
 
     return lista
-
-def webpay(request):
-    return render(request, 'app/webpay.html')
-
-def base(request):
-    return render(request,'productos.html')
-
-def pagowebpay(request):
-    return render (request,'app/pagowebpay.html')
-
-def bancos(request):
-    return render(request, 'app/bancos.html')
 
 def registro(request):
     data = {
