@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{% static  'app/css/categorias.css' %}">
 {% endblock %}
 {% block contenido %}
+
+
 <section id="categorias">
   <div class="contenedor">
     {% for p in productos %}
@@ -14,13 +16,17 @@
         <img src="data:img_producto/png;base64, {{p.img_producto}}" width="100px" height="100px" alt="">
         {% endif%}
         <h4>{{p.data.1}}</h4>
-        <input type="text" value="{{p.data.0}}" hidden>
+        <a href="{% url 'Add' p.data.0 %}" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
+
       </a>
     </article>
 
     {% endfor %}
   </div>
   {% endblock contenido %}
+<div class=col-4>
+  {% include "carritodecompras.html" %}
+</div>
   {% block js %}
 
   {% endblock js %}

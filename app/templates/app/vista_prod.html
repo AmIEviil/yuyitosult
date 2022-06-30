@@ -18,7 +18,7 @@
           <h4 >{{reg.nombre}}</h4>
           <p>{{reg.descripcion}} <br>{{reg.precio}}</p><br>
         </a>
-        <a href="#" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
+        <a href="{% url 'Add' reg.id_producto %}" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
   </article>
   </div>
 </section>

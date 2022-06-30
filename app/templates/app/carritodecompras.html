@@ -2,59 +2,66 @@
 
 {% load static %}
 {% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 {% endblock %}
 {% block contenido %}
-<p style="text-align: center;">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="{% static 'app/img/carro.png' %}" alt=""></p>
+
 
 <!--Fondo de la página-->
 
-  <div class="container" id="tablahorario">
-    <h2></h2>
-    <p></p>
-    <table class="table" id="tablahorario">
-      <thead class="thead-dark">
-        <tr>
-          <th>Imagen</th>
-          <th>Nombre</th>
-          <th>Precio</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong><img src="{% static 'app/img/carrito/1.png' %}" alt=""></strong></td>
-          <td><strong>Cachantun Agua mineral con gas 1.6 L</strong></td>
-          <td><strong>$770</strong></td>
-        </tr>
-        <tr>
-          <td><strong><img src="{% static 'app/img/carrito/11.png' %}" alt=""></strong></td>
-          <td><strong>Benedictino Agua Purificada con gas 1.5 L</strong></td>
-          <td><strong>$740</strong></td>
-        </tr>
-        <tr>
-          <td><strong><img src="{% static 'app/img/carrito/2.png' %}" alt=""></strong></td>
-          <td><strong>Canada Dry Ginger Ale 1.5 L</strong></td>
-          <td><strong>$1.700</strong></td><br>
-          <td><strong><br>Total <br>$3.210 <br> <br><a href="{% url 'delivery' %}"><button type="submit" class="btn btn-primary mb-2">Pagar</button></a></strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <!--Espaciados-->
-  <br><br><br><br><br>
-  {% endblock contenido %}
-  {% block js %}
+<div class="container" id="tablahorario">
+  <table class="table" id="tablahorario">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="row" colspan="3" class="text-center">CARRITO</th>
+      </tr>
+      <tr>
+        <th>Nombre</th>
+        <th>Acumulado</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if request.session.carrito.items %}
+      {% for key, value in request.session.carrito.items %}
+      <tr>
+        <td>{{value.nombre}}</td>
+        <td>{{value.cantidad}}
+          <a href="{% url 'Add' value.producto_id %}" ><button type="button" class="btn btn-light">+</button></a>
+          <a href="{% url 'Res' value.producto_id %}" ><button type="button" class="btn btn-light">-</button></a>
+          
+          
+        </td>
+        <td>$ {{value.acumulado}}</td>
+        
 
-  {% endblock js %}
+        
+      </tr>
+      {% endfor %}
+      {% else %}
+      <tr>
+        <td colspan="3">
+          <div class="alert alert-danger text-center"> Sin Productos </div>
+        </td>
+      </tr>
+      {% endif %}
+      <tr>
+        <th scope="row">Total: </th>
+        <td colspan="2"> $ {{total_carrito}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+</div>
+<div class="row text-center">
+  <div class="col-6"><a href="{% url 'Era' %}" class="btn btn-danger">Limpiar</a></div>
+  <div class="col-6"><a href="{% url 'delivery' %}" class="btn btn-success">Pagar</a></div>
+</div>
+{% endblock contenido %}
+{% block js %}
+
+{% endblock js %}

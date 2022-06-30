@@ -33,10 +33,9 @@
                 <li><a href="{% url 'catalogo' %}" style="font-size: medium; font-style: normal;">Catálogo</a></li>
                 <li><a href="{% url 'productos' %}" style="font-size: medium; font-style: normal;">Productos</a>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}" style="font-size: medium; font-style: normal;">Cerrar Sesion</a></li>
-                <li>
-                    <a href="#" style="font-size: medium; font-style: normal;" >{{user.username}}</a>
-                </li>
+                <li><a href="#" style="font-size: medium; font-style: normal;" >{{user.username}}</a></li>
+                <li><a href="{% url 'logout' %}" style="font-size: medium; font-style: normal;">Cerrar Sesion</a></li>
+                
                 {% else %}
                     <li><a href="{% url 'login' %}" style="font-size: medium; font-style: normal;">Iniciar Sesion</a></li>
                 {% endif %}
@@ -47,7 +46,7 @@
         </div>
     </nav>
 
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br>
     <!--Fondo de la página-->
 
 

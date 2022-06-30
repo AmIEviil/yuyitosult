@@ -11,6 +11,7 @@ from django.shortcuts import redirect
 
 from django.template import base
 
+from app.carrito import Carrito
 
 def vista_prod(request,id):
     id_tipo = TipoProducto.objects.get(id_tipo_producto=id)
@@ -81,6 +82,30 @@ def productos(request):
     }
 
     return render(request, 'app/productos.html', data)
+
+def agregar_producto(request, id_producto):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id_producto=id_producto)
+    carrito.agregar(producto)
+    return redirect("carritodecompras")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.eliminar(producto)
+    return redirect("carritodecompras")
+
+def restar_producto(request, id_producto):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id_producto=id_producto)
+    carrito.restar(producto)
+    return redirect("carritodecompras")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("carritodecompras")
+
 
 def quienessomos(request):
     return render(request, 'app/quienessomos.html')
