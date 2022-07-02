@@ -10,7 +10,7 @@
     <article> 
       <a>
         {% if producto.img_producto %}
-            <img src="data:img_producto/png;base64, {{p.img_producto}}" width="100px" height="100px" alt="">
+            <img src="data:img_producto/png;base64, {{producto.img_producto}}" width="100px" height="100px" alt="">
         {% endif%}
           <h4 >{{producto.nombre}}</h4>
           <p>{{producto.descripcion}} <br>$ {{producto.precio}}</p><br>

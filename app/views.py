@@ -21,6 +21,7 @@ def vista_prod(request,id):
 def visualizar_prod(request,id):
     producto = Producto.objects.get(id_producto=id)
     contexto = {"producto":producto}
+    
     return render(request, 'app/producto.html',contexto)
 
 def catalogo (request):
