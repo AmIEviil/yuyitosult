@@ -1,24 +1,30 @@
 {% extends 'app/base.html' %}
 
 {% load static %}
-
+{% block css %}
+<link rel="stylesheet" href="{% static  'app/css/categorias.css' %}">
+{% endblock %}
 {% block contenido %}
-  <br><br><br>
-  <div class="card" style="left: 570px;width: 300px; border-radius: 20px;">
-    <br>
-    <form class="form-inline" action="/action_page.php" style="text-align: center;">
-      <label for="email2" class="mb-2 mr-sm-2"></label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Ingresar producto" name="producto" style="text-align: center;">
-      <br><br> 
-      <div style="text-align: center;">
-      <button type="submit" class="btn btn-primary mb-2">Buscar</button>
-      </div>
-    </form>
-    <br>
+<section id="categorias">
+  <div class="contenedor">
+
+    {% for reg in producto %}
+    <article>
+      <a>
+        <a href="/visualizar_prod/{{reg.id_producto}}/">
+          {% if reg.img_producto %}
+          <img src=" {{reg.img_producto.url}}" width="100px" height="100px" alt="">
+          {% endif%}
+          <h4>{{reg.nombre}}</h4>
+          <p>{{reg.descripcion}} <br>$ {{reg.precio}}</p><br>
+          <a href="{% url 'Add' reg.id_producto %}" class="btn btn-danger">Añadir al Carrito</a>
+        </a>
+
+    </article>
+    {% endfor %}
   </div>
-  <!--Espaciados-->
-  <br><br><br><br><br><br><br><br>  <br><br><br><br><br><br><br><br>
+  </div>
   {% endblock contenido %}
   {% block js %}
-  
+
   {% endblock js %}

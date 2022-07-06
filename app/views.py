@@ -12,17 +12,40 @@ from django.shortcuts import redirect
 from app.carrito import Carrito
 
 def vista_prod(request,id):
-    id_tipo = TipoProducto.objects.get(id_tipo_producto=id)
-    productos = Producto.objects.filter(id_tipo_producto=id_tipo)
-    contexto = {"productos":productos}
-    print(productos)
-    return render(request, 'app/vista_prod.html',contexto)
+    
+    datos_tipos = buscar_Tipo_Productos(id)
+
+    arreglo = []
+
+    for i in datos_tipos:
+        data = {
+            'data':i,
+            'img_producto':str(base64.b64encode(i[10].read()), 'utf-8')
+        }
+        arreglo.append(data)
+    data = {
+        'productos': arreglo,
+    }
+
+    return render(request, 'app/vista_prod.html',data)
 
 def visualizar_prod(request,id):
-    producto = Producto.objects.get(id_producto=id)
-    contexto = {"producto":producto}
-    
-    return render(request, 'app/producto.html',contexto)
+
+    datos_tipos = buscar_Productos(id)
+
+    arreglo = []
+
+    for i in datos_tipos:
+        data = {
+            'data':i,
+            'img_producto':str(base64.b64encode(i[10].read()), 'utf-8')
+        }
+        arreglo.append(data)
+    data = {
+        'productos': arreglo,
+    }
+
+    return render(request, 'app/producto.html', data)
 
 def catalogo (request):
 
@@ -54,8 +77,9 @@ def productos(request):
             'img_producto':str(base64.b64encode(i[10].read()), 'utf-8')
         }
         arreglo.append(data)
+    #'productos': listado_Productos(),
+    #'productos': arreglo,
     data = {
-        'productos': listado_Productos(),
         'productos': arreglo,
     }
 
@@ -91,9 +115,6 @@ def quienessomos(request):
 def delivery(request):
     return render(request, 'app/delivery.html')
 
-def busqueda(request):
-    return render(request, 'app/busqueda.html')
-
 def carritodecompras(request):
     return render(request, 'app/carritodecompras.html')
 
@@ -114,6 +135,56 @@ def pagowebpay(request):
 
 def bancos(request):
     return render(request, 'app/bancos.html')
+
+def filtrar_palabra_clave(request):
+    if request.POST:
+        texto=request.POST.get("txtFiltrar")
+        producto = Producto.objects.filter(nombre__contains=texto)
+
+    data = {
+        "producto":producto
+    }
+    print(texto)
+    return render(request, "app/busqueda.html",data)
+
+def listar_Producto(texto):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+
+    cursor.callproc("SP_LISTAR_PRODUCTO", [texto,out_cur])
+
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+
+    return lista
+
+def buscar_Productos(id):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+
+    cursor.callproc("SP_BUSCAR_PRODUCTOS", [id,out_cur])
+
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+
+    return lista
+
+def buscar_Tipo_Productos(id):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+
+    cursor.callproc("SP_BUSCAR_TIPO_PRODUCTOS", [id,out_cur])
+
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+
+    return lista
 
 def listado_Productos():
     django_cursor = connection.cursor()

@@ -6,23 +6,23 @@
 {% endblock %}
 {% block contenido %}
 
-{% for reg in productos %}
+
 <section id="categorias">
   <div class="contenedor">
-  
+{% for p in productos %}  
   <article> 
-      <a href="/visualizar_prod/{{reg.id_producto}}/">
-        {% if reg.img_producto %}
-            <img src="reg:img_producto/png;base64,{{reg.img_producto}}" width="100px" height="100px" alt="">
+      <a href="/visualizar_prod/{{p.data.0}}/">
+        {% if p.img_producto %}
+            <img src="data:img_producto/png;base64, {{p.img_producto}}" width="100px" height="100px" alt="">
         {% endif%}
-          <h4 >{{reg.nombre}}</h4>
-          <p>{{reg.descripcion}} <br>$ {{reg.precio}}</p><br>
+          <h4 >{{p.data.1}}</h4>
+          <p>{{p.data.2}} <br>$ {{p.data.3}}</p><br>
         </a>
-        <a href="{% url 'Add' reg.id_producto %}" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
+        <a href="{% url 'Add' p.data.0 %}" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
   </article>
+   {% endfor %}
   </div>
 </section>
-{% endfor %}
 {% endblock contenido %}
 {% block js %}
 

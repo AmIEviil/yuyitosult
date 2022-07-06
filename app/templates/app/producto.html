@@ -7,17 +7,19 @@
 {% block contenido %}
 <section id="categorias">
   <div class="contenedor">
+      {% for p in productos %}
     <article> 
       <a>
-        {% if producto.img_producto %}
-            <img src="data:img_producto/png;base64, {{producto.img_producto}}" width="100px" height="100px" alt="">
+        {% if p.img_producto %}
+            <img src="data:img_producto/png;base64, {{p.img_producto}}" width="100px" height="100px" alt="">
         {% endif%}
-          <h4 >{{producto.nombre}}</h4>
-          <p>{{producto.descripcion}} <br>$ {{producto.precio}}</p><br>
-        <a href="{% url 'Add' producto.id_producto %}" class="btn btn-danger">Añadir al Carrito</a>  
+          <h4 >{{p.data.1}}</h4>
+          <p>{{p.data.2}} <br>$ {{p.data.3}}</p><br>
+        <a href="{% url 'Add' p.data.0 %}" class="btn btn-danger">Añadir al Carrito</a>  
         </a>
         
       </article>
+          {% endfor %}
     </div>
   </div>
   {% endblock contenido %}

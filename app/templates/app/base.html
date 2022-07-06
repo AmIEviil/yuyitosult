@@ -11,7 +11,6 @@
     {% block css %}
     {% endblock %}
     <link rel="stylesheet" href="{% static  'app/css/estilo.css' %}">
-    <script src="{% static 'app/js/scripts.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -26,18 +25,26 @@
 
     <nav>
         <div class="nav-wrapper" style="background-color: #DD4A48;">
-            <a href="{% url 'home' %}" class="brand-logo"><i class="material-icons" style="font-style: normal;"><img src="{% static 'app/img/2.png' %}" alt=""></a>
+            <a href="{% url 'home' %}" class="brand-logo"><i class="material-icons" style="font-style: normal;"><img
+                        src="{% static 'app/img/2.png' %}" alt=""></a>
+
             <ul class="right hide-on-med-and-down">
-                <li><input class="form-control me-2" style="margin-top: 15px;" type="search" placeholder="Producto" name="buscar" aria-label="Search"></li>
-                <li><a onclick="myfunc()"><i class="fa fa-search" style="font-size: medium;"></i></a></li>
+                <li>
+                    <form action="{% url 'filtroPC' %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="txtFiltrar" id="txtFiltrar">
+                </li>
+                <li><input type="submit" value="Buscar"
+                        style="background-color: #DD4A48; border-color: #DD4A48; padding: 0%;"></li>
+                </form>
                 <li><a href="{% url 'catalogo' %}" style="font-size: medium; font-style: normal;">Catálogo</a></li>
                 <li><a href="{% url 'productos' %}" style="font-size: medium; font-style: normal;">Productos</a>
-                {% if user.is_authenticated %}
-                <li><a style="font-size: medium; font-style: normal;" >{{user.username}}</a></li>
+                    {% if user.is_authenticated %}
+                <li><a style="font-size: medium; font-style: normal;">{{user.username}}</a></li>
                 <li><a href="{% url 'logout' %}" style="font-size: medium; font-style: normal;">Cerrar Sesion</a></li>
-                
+
                 {% else %}
-                    <li><a href="{% url 'login' %}" style="font-size: medium; font-style: normal;">Iniciar Sesion</a></li>
+                <li><a href="{% url 'login' %}" style="font-size: medium; font-style: normal;">Iniciar Sesion</a></li>
                 {% endif %}
                 </li>
                 <li><a href="{% url 'carritodecompras' %}"><i class="glyphicon glyphicon-shopping-cart"></i></a>
@@ -46,6 +53,7 @@
         </div>
     </nav>
 
+    <p id="valueInput"></p>
     <br><br><br><br>
     <!--Fondo de la página-->
 
@@ -108,5 +116,14 @@
     {% block js %}
     {% endblock %}
 </body>
+<script>
+
+    const getValueInput = () => {
+        let inputValue = document.getElementById("domTextElement").value;
+        document.getElementById("valueInput").innerHTML = inputValue;
+
+    }
+
+</script>
 
 </html>
