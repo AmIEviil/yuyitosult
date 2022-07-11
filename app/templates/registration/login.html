@@ -5,17 +5,18 @@
 {% block contenido %}
 
 <body>
+<br><br><br><br><br>
     <div class="container">
         {% load crispy_forms_tags %}
     <div class="row">
         <div class="col-12 col-md-6 offset-md-3">
 
-            <div class="card" style="left: 270px;width: 600px; text-align: center;bottom: 70px;">
+            <div class="card" style="left: 270px;width: 600px; text-align: center;bottom: 70px; font-size: 16px;">
                 <div class="card-body">
                     <br>
                     <h2>Iniciar Sesion</h2>
                     <hr>
-                    <form action="" method="post">
+                    <form action="" method="post" style="font-size: 16px;">
 
                         {% csrf_token %}
                         {{form | crispy}}

@@ -5,17 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almacen Yuyitos</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimun-scale=1.0 ">
+    <title>~ Almacen Yuyitos ~ </title>
     {% load static %}
     {% block css %}
     {% endblock %}
     <link rel="stylesheet" href="{% static  'app/css/estilo.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c51bd5a0a9.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     {% load static %}
 </head>
 
@@ -23,38 +26,38 @@
 
 <body style="background-image: url({% static 'app/img/fondotester.jpg' %})">
 
-    <nav>
-        <div class="nav-wrapper" style="background-color: #DD4A48;">
-            <a href="{% url 'home' %}" class="brand-logo"><i class="material-icons" style="font-style: normal;"><img
+    <header>
+        <div class="contenedor">
+            <a href="{% url 'home' %}" class="brand-logo"><i class="material-icons" style="font-style: normal; margin-top: 5px;"><img
                         src="{% static 'app/img/2.png' %}" alt=""></a>
-
-            <ul class="right hide-on-med-and-down">
-                <li>
+            <!-- visualizar menu al momento de ejecutar responsive-->
+            <input type="checkbox" name="" id="menu-bar">
+            <label for="menu-bar"><i class="fa-solid fa-bars" style="color: white;"></i></label>
+            <!-- menu -->
+            <nav class="menu">
+                <div class="buscar">
                     <form action="{% url 'filtroPC' %}" method="post">
                         {% csrf_token %}
                         <input type="text" name="txtFiltrar" id="txtFiltrar">
-                </li>
-                <li><input type="submit" value="Buscar"
-                        style="background-color: #DD4A48; border-color: #DD4A48; padding: 0%;"></li>
+                </div>
+                <input type="submit" value="Buscar"
+                    style="background-color: #DD4A48; border-color: #DD4A48; padding: 0px;">
                 </form>
-                <li><a href="{% url 'catalogo' %}" style="font-size: medium; font-style: normal;">Catálogo</a></li>
-                <li><a href="{% url 'productos' %}" style="font-size: medium; font-style: normal;">Productos</a>
-                    {% if user.is_authenticated %}
-                <li><a style="font-size: medium; font-style: normal;">{{user.username}}</a></li>
-                <li><a href="{% url 'logout' %}" style="font-size: medium; font-style: normal;">Cerrar Sesion</a></li>
-
+                <a href="{% url 'catalogo' %}">Catálogo</a>
+                <a href="{% url 'productos' %}">Productos</a>
+                {% if user.is_authenticated %}
+                <a>{{user.username}}</a>
+                <a href="{% url 'logout' %}">Cerrar Sesion</a>
                 {% else %}
-                <li><a href="{% url 'login' %}" style="font-size: medium; font-style: normal;">Iniciar Sesion</a></li>
+                <a href="{% url 'login' %}">Iniciar Sesion</a>
                 {% endif %}
-                </li>
-                <li><a href="{% url 'carritodecompras' %}"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                </li>
-            </ul>
+                <a href="{% url 'carritodecompras' %}"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <p id="valueInput"></p>
-    <br><br><br><br>
+
+    <br><br><br><br><br><br>
     <!--Fondo de la página-->
 
 
@@ -64,7 +67,7 @@
     <!--Espaciados-->
     <br><br>
     <!--Footer-->
-    <footer class="page-footer" id="footers" style="background-color: #DD4A48;">
+     <footer class="page-footer" id="footers" style="background-color: #DD4A48;">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -116,14 +119,5 @@
     {% block js %}
     {% endblock %}
 </body>
-<script>
-
-    const getValueInput = () => {
-        let inputValue = document.getElementById("domTextElement").value;
-        document.getElementById("valueInput").innerHTML = inputValue;
-
-    }
-
-</script>
 
 </html>

@@ -32,8 +32,8 @@
         <td>{{value.nombre}}</td>
         <td>{{value.cantidad}}</td>
         <td>
-          <a href="{% url 'Add' value.producto_id %}"><button type="button" >+</button></a>
-          <a href="{% url 'Res' value.producto_id %}"><button type="button" >-</button></a>
+          <a href="{% url 'Add' value.producto_id %}"><button type="button" > + </button></a>
+          <a href="{% url 'Res' value.producto_id %}"><button type="button" > -  </button></a>
         </td>
         <td>$ {{value.acumulado}}</td>
       </tr>
@@ -57,6 +57,7 @@
   <div class="col-6"><a href="{% url 'Era' %}" class="btn btn-danger">Vaciar Carrito</a></div>
   <div class="col-6"><a href="{% url 'delivery' %}" class="btn btn-success">Ir A Pagar</a></div>
 </div>
+<br><br>
 {% endblock contenido %}
 {% block js %}
 

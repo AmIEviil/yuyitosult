@@ -5,26 +5,37 @@
 <link rel="stylesheet" href="{% static  'app/css/categorias.css' %}">
 {% endblock %}
 {% block contenido %}
-<section id="categorias">
-  <div class="contenedor">
 
-    {% for reg in producto %}
-    <article>
-      <a>
-        <a href="/visualizar_prod/{{reg.id_producto}}/">
-          {% if reg.img_producto %}
-          <img src=" {{reg.img_producto.url}}" width="100px" height="100px" alt="">
-          {% endif%}
-          <h4>{{reg.nombre}}</h4>
-          <p>{{reg.descripcion}} <br>$ {{reg.precio}}</p><br>
-          <a href="{% url 'Add' reg.id_producto %}" class="btn btn-danger">Añadir al Carrito</a>
-        </a>
+<div class="container" id="tablahorario">
+  <table class="table" id="tablahorario">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="row" colspan="5" class="text-center" style="font-size: xx-large;">TU BUSQUEDA</th>
+      </tr>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Stock Disponible</th>
+        <th>Valor</th>
+        <th>Añadir a Carrito</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for reg in producto %}
+      <tr>
+        <td>{{reg.nombre}}</td>
+        <td>{{reg.descripcion}}</td>
+        <td>{{reg.stock}}</td>
+        <td>$ {{reg.precio}}</td>
+        <td><a href="{% url 'Add' reg.id_producto %}" class="btn btn-danger">Añadir</a> </td>
+      </tr>
+      {% endfor %}
 
-    </article>
-    {% endfor %}
-  </div>
-  </div>
-  {% endblock contenido %}
-  {% block js %}
+    </tbody>
+  </table>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock contenido %}
+{% block js %}
 
-  {% endblock js %}
+{% endblock js %}

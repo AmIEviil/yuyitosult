@@ -18,6 +18,7 @@ header label{
     background: #DD4A48;
     transform: translateX(-100%);
     transition: all 1.5s;
+    font-size: x-large;
 }
 .menu .buscar {
     display: flex;
@@ -25,11 +26,8 @@ header label{
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
-    margin-left: 25%;
     margin-right: 10px;   
 }
-
-
 .menu .buscar .form-control  {
     text-align: center; 
 

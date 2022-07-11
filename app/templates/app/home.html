@@ -7,8 +7,8 @@
 {% block contenido %}
 
 <!--Carrusel-->
-<section class="carrusel" >
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="border-radius: 15px ; width: 1200px;">
+<section class="carrusel" style="width: 80%;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="border-radius: 15px;">
     <!-- Indicadores -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -42,11 +42,12 @@
 </section>
 <br><br>
 <!--Imagen de despacho-->
-<div class="deli" >
-  <img src="{% static 'app/img/delivery-en-pleno-trafico.jpg' %}" alt="" width="1200" height="300" style="border-radius: 15px ;">
+<div class="deli">
+  <img src="{% static 'app/img/delivery-en-pleno-trafico.jpg' %}" alt="" width="80%" height="300"
+    style="border-radius: 15px ;">
 </div>
 <br><br><br><br>
-<p style="text-align: center;"><img src="{% static 'app/img/productonewlogo.png' %}" alt=""></p>
+<p style="text-align: center;"><img src="{% static 'app/img/productonewlogo.png' %}" alt="" width="80%"></p>
 <br><br><br><br>
 <!--Imagenes Promocionales-->
 <div class="prodsnew">
@@ -59,48 +60,49 @@
   &nbsp;&nbsp;&nbsp;
   <img src="{% static 'app/img/desodorante/4.png' %}" alt="" width="346" height="300">
 </div>
-<br><br><br><br><br><br>
-<!--Titulo Bebida-->
-<p style="text-align: center;"><img src="{% static 'app/img/bebidafav.png' %}" alt=""></p>
-<br><br><br><br>
-<!--Cards de los Productos Home-->
-<div class="prodcoca">
-  <div class="card-group">
-    <div class="card" style="margin: 15px">
-      <img class="card-img-top" src="{% static 'app/img/coca z.jpg' %}" alt="Card image" style="width:100%">
-      <div class="card-body">
-        <h4 class="card-title">Coca-Cola</h4>
-        <p class="card-text">Bebida Coca-Cola sin azúcar 350 ml <br>Precio: $690 (1 Unidad)</p><br>
-        <a href="#" class="btn btn-danger" style="left: 40px;">Añadir al Carrito</a>
-      </div>
+<br><br>
+<!-- 
+<p style="text-align: center;"><img src="{% static 'app/img/bebidafav.png' %}" alt="" width="80%"></p>
+<br>
+<div class="card-group" style="text-align: left;">
+  <div class="card" style="margin: 15px; ">
+    <img class="card-img-top" src="{% static 'app/img/coca z.jpg' %}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Coca-Cola</h4>
+      <p class="card-text">Bebida Coca-Cola sin azúcar 350 ml <br>Precio: $690 (1 Unidad)</p><br>
     </div>
-    <div class="card" style="margin: 15px">
-      <img class="card-img-top" src="{% static 'app/img/coca.jpg' %}" alt="Card image" style="width:100%">
-      <div class="card-body">
-        <h4 class="card-title">Coca-Cola</h4>
-        <p class="card-text">Bebida Coca-Cola original 350 ml<br>Precio: $690 (1 Unidad)</p><br>
-        <a href="#" class="btn btn-danger">Añadir al Carrito</a>
-      </div>
+    <div class="card-footer text-muted">
+      Sin Stock
     </div>
-    <div class="card" style="margin: 15px">
-      <img class="card-img-top" src="{% static 'app/img/bilz.png' %}" alt="Card image" style="width:100%">
-      <div class="card-body">
-        <h4 class="card-title">Bilz</h4>
-        <p class="card-text">Bebida 1.5 L<br>Precio: $1.700 (1 Unidad)</p><br>
-        <a href="#" class="btn btn-danger">Añadir al Carrito</a>
-      </div>
+  </div>
+  <div class="card" style="margin: 15px">
+    <img class="card-img-top" src="{% static 'app/img/coca.jpg' %}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Coca-Cola</h4>
+      <p class="card-text">Bebida Coca-Cola original 350 ml<br>Precio: $690 (1 Unidad)</p><br>
+    </div>
+    <div class="card-footer text-muted">
+      Sin Stock
+    </div>
+  </div>
+  <div class="card" style="margin: 15px">
+    <img class="card-img-top" src="{% static 'app/img/bilz.png' %}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Bilz</h4>
+      <p class="card-text">Bebida 1.5 L<br>Precio: $1.700 (1 Unidad)</p><br>
+    </div>
+    <div class="card-footer text-muted">
+      Sin Stock
     </div>
   </div>
 </div>
-<br>
-<!--Imagen de huevitos de pascua-->
-<!--Titulo de los huevitos-->
-<!--img becker-->
+
 <br><br>
+-->
 <div style="text-align: center;">
-  <img src="{% static 'app/img/maruchan.jpg' %}" alt="" style="border-radius: 50px;padding: 20px;">
+  <img src="{% static 'app/img/maruchan.jpg' %}" alt="" style="border-radius: 50px;padding: 20px; width: 80%;">
 </div>
-<br><br>
+
 <!--img anuncios x2-->
 <br><br>
 <div style="text-align: center;">
@@ -112,7 +114,7 @@
 <br><br>
 <!--Anuncio de detergente-->
 <div style="text-align: center;">
-  <img src="{% static 'app/img/Anuncioariel.jpg' %}" alt="" style="border-radius: 50px;padding: 20px;">
+  <img src="{% static 'app/img/Anuncioariel.jpg' %}" alt="" style="border-radius: 50px;padding: 20px; width: 80%;">
 </div>
 <!--Espaciados-->
 <br><br>
